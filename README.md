@@ -6,10 +6,10 @@ A React hook for efficiently accessing access local storage.
 
 ```bash
 # yarn
-yarn add use-localstorage
+yarn add @weekrise/use-localstorage
 
 # npm
-npm install --save use-localstorage
+npm install --save @weekrise/use-localstorage
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ The data is serialized to JSON which means that you can store numbers, strings,
 objects, arrays or anything else that can be passed to `JSON.stringify`.
 
 ```jsx
-import createLocalstorageState from 'use-localstorage';
+import createLocalstorageState from '@weekrise/use-localstorage';
 
 let useLocalstorage = createLocalstorageState('key-name', 3);
 
@@ -37,7 +37,7 @@ let App = () => {
 ### Usage with Typescript
 
 ```jsx
-import createLocalstorageState from 'use-localstorage';
+import createLocalstorageState from '@weekrise/use-localstorage';
 
 let useLocalstorage = createLocalstorageState<{
   name: string;
