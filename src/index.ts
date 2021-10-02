@@ -1,20 +1,16 @@
 import createGlobalState from 'use-state-global';
 
-export let readLocalstorage = (key: string) => {
+let readLocalstorage = (key: string) => {
   let item = localStorage.getItem(key);
   if (!item) return undefined;
   return JSON.parse(item);
 };
 
-export let deleteLocalstorage = (key: string) => {
-  localStorage.removeItem(key);
-};
-
-export let writeLocalstorage = (key: string, data: any) => {
+let writeLocalstorage = (key: string, data: any) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
 
-export let createLocalstorageState = <T>(key: string, defaultState?: T) => {
+let createLocalstorageState = <T>(key: string, defaultState?: T) => {
   let internalState = createGlobalState<T>(defaultState as T);
   let initialData = readLocalstorage(key);
 
@@ -47,3 +43,5 @@ export let createLocalstorageState = <T>(key: string, defaultState?: T) => {
     setState: (v: T) => void;
   };
 };
+
+export default createLocalstorageState;
