@@ -10,6 +10,9 @@
   "engines": {
     "node": ">=10"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
@@ -32,7 +35,7 @@
     "singleQuote": true,
     "trailingComma": "none"
   },
-  "name": "use-localstorage",
+  "name": "@weekrise/use-localstorage",
   "author": "Tobias Herber",
   "module": "dist/use-localstorage.esm.js",
   "size-limit": [
