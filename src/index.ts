@@ -1,12 +1,14 @@
 import createGlobalState from 'use-state-global';
 
 let readLocalstorage = (key: string) => {
+  if (typeof localStorage == 'undefined') return undefined;
   let item = localStorage.getItem(key);
   if (!item) return undefined;
   return JSON.parse(item);
 };
 
 let writeLocalstorage = (key: string, data: any) => {
+  if (typeof localStorage == 'undefined') return;
   localStorage.setItem(key, JSON.stringify(data));
 };
 
